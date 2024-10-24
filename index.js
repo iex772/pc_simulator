@@ -73,7 +73,7 @@ function teste(){
 
 
 
-app.post("/outronome", function (req, res) {
+app.post("/validar_cadastrar", function (req, res) {
 
 
 console.log(req.body)
@@ -85,8 +85,7 @@ console.log(req.body)
     var x = {
         usuario: req.body.usuario,
         email: req.body.email,
-        senha: req.body.senha,
-        data: Date.now()
+        senha: req.body.senha
     }
 
     db.run(sql, [req.body.usuario, req.body.email, req.body.senha], function (err) {
