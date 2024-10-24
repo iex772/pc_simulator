@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="login.css" />
+
+        <script>
+
+
+            
+            function enviar() {
+
+                
+                var usuarios = {
+                    email: document.getElementById("emailp").value,
+                    senha: document.getElementById("senhap").value
+                };
+
+                var options = {
+                    method: "POST",
+                    headers:{"Content-Type": "application/JSON"},
+                    body: JSON.stringify(usuarios),
+                };
+
+                var url = "/enviar";
+                fetch(url, options)
+                .then((response) => response.text())
+                .then((resposta) => {
+                    alert(resposta)
+                });
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <div id="Comeco">
+            <div id="Login">
+                <div class="inicial">
+                    <h3>Email:</h3>
+                </div>
+                <div class="insira">
+                    <box-icon
+                        name="envelope"
+                        type="solid"
+                        color="#ffffff"
+                    ></box-icon>
+                    <input
+                        id="emailp"
+                        style="width: 300px; height: 30px; border-radius: 5px"
+                        placeholder="Digite o seu email"
+                    />
+                </div>
+                <div class="inicial">
+                    <h3>Senha:</h3>
+                </div>
+                <div class="insira">
+                    <box-icon
+                        name="lock-alt"
+                        type="solid"
+                        color="#ffffff"
+                    ></box-icon>
+                    <input
+                        id="senhap"
+                        type="password"
+                        style="width: 300px; height: 30px; border-radius: 5px"
+                        placeholder="Insira a senha"
+                    />
+                </div>
+                <div class="botao">
+                    <button
+                        onclick="enviar()";
+                        style="
+                            width: 150px;
+                            height: 30px;
+                            border-radius: 5px;
+                            font-size: 15px;
+                        "
+                    >
+                        Login
+                    </button>
+                    <a href="cadastro.html">Crie sua conta!</a
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

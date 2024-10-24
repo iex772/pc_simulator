@@ -1,0 +1,56 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+#partecima{
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.partecimaitens{
+  width: 30%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+#fundo2{
+  width: 100%;
+  height: 1300px;
+  background-color: black;
+}
+
+#titulopc{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.hardwaresfundo{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#modelos3dfundo{
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
