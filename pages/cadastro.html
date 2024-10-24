@@ -12,6 +12,32 @@
         />
         <title>Cadastrar</title>
         <link rel="stylesheet" type="text/css" href="login.css" />
+
+
+        <script>
+            function cadastrar() {
+
+
+                var usuarios = {
+                    usuario: document.getElementById("usuarioI").value,
+                    email: document.getElementById("emailI").value,
+                    senha: document.getElementById("senhaI").value
+                };
+
+                var options = {
+                    method: "POST",
+                    headers:{"Content-Type": "application/JSON"},
+                    body: JSON.stringify(usuarios),
+                };
+
+                var url = "/cadastrar";
+                fetch(url, options)
+                .then((response) => response.text())
+                .then((resposta) => {
+                    alert(resposta)
+                });
+            }
+        </script>
     </head>
     <body>
         <div id="Comeco"> 
@@ -22,7 +48,7 @@
                 </div>
                 <div class="insira">
                     <box-icon name='user' type='solid' color='#ffffff' ></box-icon>
-                    <input style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Crie o nome de usuário">
+                    <input id="usuarioI" style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Crie o nome de usuário">
                 </div>
                 <div id="Login">
                     <div class="inicial">
@@ -31,17 +57,17 @@
                     </div>
                     <div class="insira">
                         <box-icon name='envelope' type='solid' color='#ffffff' ></box-icon>
-                        <input style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Digite o seu email">
+                        <input id="emailI" style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Digite o seu email">
                     </div>
                 <div class="inicial">
                     <h3>Senha:</h3>
                 </div>
                 <div class="insira">
                     <box-icon name='lock-alt' type='solid' color='#ffffff' ></box-icon>
-                    <input  type="password" style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Crie uma senha forte">
+                    <input id="senhaI"  type="password" style="width: 300px; height: 30px; border-radius: 5px;" placeholder="Crie uma senha forte">
                 </div>
                 <div class="botao">
-                    <button style="width: 150px; height: 30px; border-radius: 5px; font-size: 15px;"> Cadastrar </button>
+                    <button onclick="cadastrar()" style="width: 150px; height: 30px; border-radius: 5px; font-size: 15px;"> Cadastrar </button>
                     <a href="login.html">Faça login!</a >
                 </div>
             </div>
