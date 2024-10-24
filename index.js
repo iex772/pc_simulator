@@ -2,7 +2,7 @@ const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const app = express();
 const path = require("path");
-const db = new sqlite3.Database("nao_abrir/Database.sqlite");
+const db = new sqlite3.Database("Database.sqlite");
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "pages")));
@@ -58,8 +58,17 @@ else res.send("Erro!");
     
 });
 
+teste();
+function teste(){
 
+    var sql = "INSERT INTO USUARIOS (USUARIO, EMAIL, SENHA) VALUES ('JEREMIAS2008', 'JEREMIAS@EMAIL.COM', '123');";
 
+    db.run(sql, (err) => {
+        if (err) console.log("Eroo!");
+        else console.log("OK");
+    });
+
+}
 
 
 
@@ -108,4 +117,4 @@ console.log(req.body)
 
 
 
-app.listen(4080, console.log("run..."));
+app.listen(3000, console.log("run..."));
