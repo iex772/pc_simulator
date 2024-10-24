@@ -71,7 +71,7 @@ console.log(req.body)
 
 
 
-    var sql = "INSERT INTO LOGIN (USUARIO, EMAIL, SENHA) VALUES (?, ?, ?);";
+    var sql = "INSERT INTO USUARIOS (USUARIO, EMAIL, SENHA) VALUES (?, ?, ?);";
 
     var x = {
         usuario: req.body.usuario,
@@ -100,7 +100,7 @@ console.log(req.body)
 
          
 
-//tabela();
+tabela();
 
 
 
