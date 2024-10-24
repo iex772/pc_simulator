@@ -28,7 +28,7 @@ app.get("/cadastrar", function (req, res) {
 // Tabela de usuários
 function tabela(){
     var sql =
-        "CREATE TABLE LOGIN (ID INTEGER PRIMARY KEY AUTOINCREMENT, USUARIO VARCHAR(100), EMAIL VARCHAR(100), SENHA VARCHAR(100));";
+        "CREATE TABLE USUARIOS (ID INTEGER PRIMARY KEY AUTOINCREMENT, USUARIO VARCHAR(100), EMAIL VARCHAR(100), SENHA VARCHAR(100));";
 
     db.run(sql, (err) => {
         if (err) console.log(err);
@@ -100,7 +100,7 @@ console.log(req.body)
 
          
 
-tabela();
+//tabela();
 
 
 
